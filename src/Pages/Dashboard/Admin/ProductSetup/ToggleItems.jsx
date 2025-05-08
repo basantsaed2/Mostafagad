@@ -22,7 +22,7 @@ export default function ToggleItems({ id }) {
     const fetchBranches = async () => {
       try {
         const response = await axios.get(
-          `https://sultanayubbcknd.food2go.online/admin/branch/branch_in_product/${id}`,
+          `https://mostafagadbcknd.food2go.online/admin/branch/branch_in_product/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -65,7 +65,7 @@ export default function ToggleItems({ id }) {
 
     try {
       await axios.put(
-        `https://sultanayubbcknd.food2go.online/admin/branch/branch_product_status/${id}`,
+        `https://mostafagadbcknd.food2go.online/admin/branch/branch_product_status/${id}`,
         { branch_id, status: newStatus },
         {
           headers: { Authorization: `Bearer ${token}` },

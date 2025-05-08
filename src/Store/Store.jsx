@@ -19,14 +19,14 @@ const reducers = combineReducers({
        ordersFailed: ordersFailedReducer,
        ordersCanceled: ordersCanceledReducer,
        ordersSchedule: ordersScheduleReducer,
-       userSultanAyub: userReducer,  // Add user reducer here
+       userMostafaGad: userReducer,  // Add user reducer here
 });
 
 // Persist configuration
 const persistConfig = {
        key: 'root',
        storage,
-       whitelist: ['userSultanAyub'], // Only persist 'user' state, exclude others
+       whitelist: ['userMostafaGad'], // Only persist 'user' state, exclude others
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

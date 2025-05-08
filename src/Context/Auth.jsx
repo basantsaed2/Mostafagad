@@ -7,7 +7,7 @@ import { removeUser, setUser } from '../Store/CreateSlices';
 // Create a context
 const AuthContext = createContext(null);
 
-export const authSelector = (state) => state.userSultanAyub || null;
+export const authSelector = (state) => state.userMostafaGad || null;
 export const ContextProvider = ({ children }) => {
   const [hideSidebar, setHideSidebar] = useState(() => {
     const savedState = localStorage.getItem('stateSidebar');
@@ -15,7 +15,7 @@ export const ContextProvider = ({ children }) => {
   });
 
   const dispatch = useDispatch();
-  const userStore = useSelector(state => state.userSultanAyub);
+  const userStore = useSelector(state => state.userMostafaGad);
 
   const [userState, setUserState] = useState(() => {
     const userData = userStore ? userStore : null;

@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 export const usePost = ({ url, login = false, type = false }) => {
        const auth = useAuth();
-       const user = useSelector(state => state.userSultanAyub);
+       const user = useSelector(state => state.userMostafaGad);
        const [loadingPost, setLoadingPost] = useState(false);
        const [response, setResponse] = useState(null);
 
