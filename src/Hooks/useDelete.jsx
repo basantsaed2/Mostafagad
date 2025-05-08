@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 export const useDelete = () => {
   const auth = useAuth();
-  const user = useSelector(state => state.userMostafaGad)
+  const user = useSelector(state => state.userSultanAyub)
   const [loadingDelete, setLoadingDelete] = useState(false);
   const [responseDelete, setResponseDelete] = useState(null);
 

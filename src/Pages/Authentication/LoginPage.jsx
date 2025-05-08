@@ -45,9 +45,13 @@ const LoginPage = () => {
 
       auth.login(response.data.admin)
 
+      // تخزين التوكن في localStorage بعد تسجيل الدخول
+      localStorage.setItem("token", response.data.token); // تخزين التوكن بعد تسجيل الدخول
+
       navigate("/dashboard", { replace: true });
     }
   }, [response])
+
   return (
     <>
       <form onSubmit={handleLogin} className="w-full flex items-center justify-center mx-auto h-screen overflow-hidden">
@@ -55,16 +59,17 @@ const LoginPage = () => {
 
           <div className="sm:w-full xl:w-5/12 flex flex-col items-start justify-start gap-y-8 h-full">
 
-            {loadingPost ?
+            {loadingPost ? 
               (
                 <>
                   <div className="w-full h-full"><LoaderLogin /></div>
                 </>
-              )
-              : (
+              ) 
+              : 
+              (
                 <>
                   <div className="flex w-full  flex-col items-start justify-start gap-y-4">
-                    <span className='sm:text-4xl xl:text-5xl font-TextFontRegular text-secoundColor'>Login to MostafaGad</span>
+                    <span className='sm:text-4xl xl:text-5xl font-TextFontRegular text-secoundColor'>Login to SultanAyub</span>
                     <span className='sm:text-4xl xl:text-5xl font-TextFontRegular text-secoundColor'>welcome back</span>
                   </div>
                   <div className="w-full flex flex-col justify-center gap-y-10 h-3/5">
@@ -107,4 +112,4 @@ const LoginPage = () => {
   )
 }
 
-export default LoginPage
+export default LoginPage;

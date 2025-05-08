@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 export const useGet = ({ url }) => {
     const auth = useAuth();
-    const user = useSelector(state => state.userMostafaGad);
+    const user = useSelector(state => state.userSultanAyub);
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
 

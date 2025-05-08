@@ -67,11 +67,16 @@ import {
   CategoryProductLayout,
   ProductVariationLayout,
   VariationOptionLayout,
+  EmailLayout,
+  AddRoleLayout,
 } from "./layouts/Layouts";
 import ProtectedLogin from "./ProtectedData/ProtectedLogin";
 import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
 import App from "./App";
-import { BusinessSettingsPage, CustomerLoginPage, MainBranchSetupPage, OrdersPage, OrdersPaymentHistoryPage, OrdersPaymentPendingPage, RestaurantTimeSlotPage } from "./Pages/Pages";
+import { BusinessSettingsPage, CustomerLoginPage, EditRolePage, MainBranchSetupPage, OrdersPage, OrdersPaymentHistoryPage, OrdersPaymentPendingPage, RestaurantTimeSlotPage } from "./Pages/Pages";
+import LogOrders from "./Pages/Dashboard/Admin/Orders/LogOrders/LogOrders";
+import EditEmailPage from "./Pages/Dashboard/Admin/Setting/Email/EditEmail";
+//import ToggleItems from "./Pages/Dashboard/Admin/ProductSetup/ToggleItems";
 
 const ProductSetupLayout = () => {
   return <Outlet />;
@@ -114,8 +119,13 @@ export const router = createBrowserRouter([
       }
     ]
   },
-
-  /* Dashboard or main app routes after login */
+{/** 
+    {
+    path: "/product/:id",
+    element: <ToggleItems />
+  },
+  */},
+    /* Dashboard or main app routes after login */
   {
     path: "/dashboard",
     element: <ProtectedLogin />,
@@ -233,10 +243,13 @@ export const router = createBrowserRouter([
                     element: <RolesLayout />,
                   },
                   {
-                    path: 'edit/:roleId',
-                    element: <EditRoleLayout />,
-                  }
-                ]
+                    path: 'add',
+                    element: <AddRoleLayout />
+                  },
+                  {
+                    path: "edit/:roleId",
+                    element: <EditRolePage />
+                  }                ]
               },
               {
                 path: 'payment_method',
@@ -544,6 +557,20 @@ export const router = createBrowserRouter([
             element: <BuyOfferLayout />,
           },
 
+
+          {
+            path: 'emails',
+            children: [
+              {
+                path: '',
+                element: <EmailLayout />,
+              },
+              {
+                path: "edit/:emailId",
+                element: <EditEmailPage />
+              }                ]
+          },
+
           {
             path: 'orders',
             element: <OrderLayout />,
@@ -588,6 +615,10 @@ export const router = createBrowserRouter([
               {
                 path: 'schedule',
                 element: <ScheduleOrdersLayout />
+              },
+              {
+                path: 'log',
+                element: <LogOrders />
               },
 
               /* Details Order */

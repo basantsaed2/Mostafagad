@@ -80,7 +80,7 @@ const soundNotification = createSlice({
 
 // User slice
 const userSlice = createSlice({
-       name: "userMostafaGad",
+       name: "userSultanAyub",
        initialState: initialUserState,
        reducers: {
               setUser: (state, action) => {
